@@ -25,7 +25,7 @@ export const getVideo2 = async(req,res)=>{
 
 export const createVideo = async (req, res)=>{
     const dbVideos = req.body;
-    const newVideo = new Videos(card);
+    const newVideo = new Videos(dbVideos);
     try{
         await newVideo.save();
         res.status(201).json(newVideo);
